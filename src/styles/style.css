@@ -63,3 +63,8 @@ button {
     color:var(--primary);
     font-weight: 700;
 }
+
+.flex-main{
+    display: flex;
+    flex-direction: row;
+}

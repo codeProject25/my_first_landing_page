@@ -69,7 +69,6 @@ h3 {
 h4 {
   font-size: 20px;
   color: var(--primary);
-  font-style: normal;
   font-weight: 600;
   line-height: 28px;
 }
@@ -82,12 +81,11 @@ p {
 button {
   font-family: Inter;
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
   line-height: 24px;
   cursor: pointer;
 }
-#menu:hover {
+button:hover {
   text-decoration: underline;
 }
 .button.primary-medium {
@@ -118,7 +116,6 @@ header {
 
 .right-menu {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   padding: 16px;
   gap: 51px;
@@ -165,13 +162,13 @@ header {
 
 .clients-logos {
   display: flex;
-  height: 98px;
   justify-content: space-evenly;
   align-items: center;
 }
 
 .clients-logos > img {
   width: 48px;
+  margin: 16px 0px;
 }
 /*--community--*/
 .community {
@@ -189,7 +186,6 @@ header {
 }
 
 .frame-4-group {
-  display: block;
   text-align: center;
   margin: 24px 32px;
 }
@@ -202,34 +198,27 @@ header {
 
 /*--unlock-mobile --*/ /*--calender--*/
 
-.unlock-mobile > img,
-.calender > img {
+.frame-img {
   margin: 52px auto;
 }
 
 .frame-5,
 .frame-7 {
   max-width: 661px;
-  flex-direction: column;
-  align-items: flex-start;
-  flex-shrink: 0;
 }
 
 /*--achievements--*/
 .achievements {
   background-color: var(--silver);
   justify-content: space-between;
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding: 64px 144px;
 }
 .achievements-frame-rights {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 30px;
 }
-
-#row-frame > h3,
-#row-frame > p {
+.row-frame-text {
   margin: 0px;
 }
 
@@ -247,7 +236,6 @@ header {
 .customers {
   background-color: var(--silver);
   gap: 78px;
-  justify-content: center;
 }
 .customers > img {
   width: 326px;
@@ -265,12 +253,12 @@ header {
   margin-bottom: 32px;
 }
 .frame-customers-icons {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 28px;
 }
 .button-green-underline {
-  display: inline-flex;
+  display: flex;
   cursor: pointer;
   align-items: center;
   padding: 8px;
@@ -281,10 +269,6 @@ header {
 /*--community-updates--*/
 .community-updates {
   text-align: center;
-  align-items: center;
-}
-.community-updates > h2 {
-  margin-bottom: 8px;
 }
 .community-updates > p {
   max-width: 628px;
@@ -326,30 +310,27 @@ header {
   padding: 32px 0px;
   background: var(--Neutral-Silver, #f5f7fa);
 }
-
-#button-demo > h4 {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  color: var(--white);
-}
-
 /*--footer--*/
 footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding: 64px 165px;
   gap: 125px;
   background: var(--Neutral-Black, #263238);
 }
-.footer-logo {
-  margin-bottom: 40px;
+.footer-logo > img {
+  margin: 0px 10px 40px 0px;
 }
 .copyright {
   margin-bottom: 40px;
 }
-#logo-1 {
-  margin-right: 10px;
+
+li,
+.icons-footer {
+  cursor: pointer;
+}
+li:hover {
+  text-decoration: underline;
 }
 .copyright > p {
   color: var(--Neutral-Silver, #f5f7fa);
@@ -368,26 +349,23 @@ footer {
 }
 .footer-right {
   display: flex;
-  justify-content: flex-start;
   gap: 30px;
 }
-
 .footer-column-items {
   list-style: none;
   color: var(--Neutral-Silver, #f5f7fa);
   font-size: 14px;
   line-height: 20px;
+  margin-right: 60px;
 }
 .footer-column-items > li {
   margin-bottom: 12px;
-  padding-right: 60px;
 }
 .footer-column > h4,
 .footer-column-with-input > h4 {
   color: var(--white);
   margin-bottom: 24px;
 }
-
 .input-with-icon {
   position: relative;
   display: inline-block;

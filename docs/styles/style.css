@@ -361,8 +361,7 @@ li:hover {
 .footer-column-items > li {
   margin-bottom: 12px;
 }
-.footer-column > h4,
-.footer-column-with-input > h4 {
+.footer-column-header {
   color: var(--white);
   margin-bottom: 24px;
 }

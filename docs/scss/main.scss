@@ -1,0 +1,438 @@
+@import "./variables";
+
+@mixin flexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flexSpaceEvenly {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flexStart {
+  display: flex;
+  align-items: flex-start;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /*This makes all paddings/borders included in the width calculation:*/
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 100%;
+  padding: 0px 144px;
+}
+body {
+  font-family: $font-family, sans-serif;
+}
+button {
+  background-color: $white;
+  /*font-size: 1rem;*/
+  border: none;
+  border-radius: 6px;
+  transition: 150ms ease-in-out;
+  transition-property: background-color, color;
+}
+
+/*fonts*/
+h1 {
+  font-size: map-get($font-sizes, regular-headline-2);
+  color: $dark-grey;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: map-get($font-sizes, regular-headline-3);
+  color: $dark-grey;
+  margin-bottom: 8px;
+}
+
+h3 {
+  font-size: map-get($font-sizes, regular-body-1);
+  color: $dark-grey;
+  margin-bottom: 16px;
+}
+
+h4 {
+  font-size: map-get($font-sizes, regular-body-2);
+  color: $primary;
+  font-weight: map-get($font-weights, semi-bold);
+  line-height: map-get($line-heights, medium);
+}
+
+p {
+  font-size: map-get($font-sizes, regular-body-3);
+  color: $grey;
+  margin-bottom: 32px;
+}
+button {
+  font-family: $font-family;
+  font-size: map-get($font-sizes, regular-body-3);
+  font-weight: map-get($font-weights, medium);
+  line-height: map-get($line-heights, normal);
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  .primary-medium {
+    @extend .button;
+    background-color: $primary;
+    color: $white;
+    border: 0;
+    border-radius: 2.78px;
+    padding: 14px 32px;
+    transition: background 0.4s, color 0.2s; /* smooth transition */
+
+    &:hover {
+      background: $shade2;
+    }
+  }
+  .button-green-underline {
+    @extend .button;
+
+    display: map-get($display, flex);
+    cursor: pointer;
+    align-items: map-get($align-items, center);
+    padding: 8px;
+    gap: 8px;
+    background-color: $silver;
+    margin: 0px auto;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: $primary;
+    }
+  }
+}
+/*--header--*/
+header {
+  @include flexSpaceBetween;
+  align-items: map-get($align-items, center);
+  position: map-get($position, sticky);
+  top: 0px;
+  background-color: $white;
+}
+
+.right-menu {
+  @include flexCenter;
+  padding: 16px;
+  gap: 51px;
+
+  > button {
+    color: $dark-grey;
+  }
+}
+
+.highlight {
+  color: $primary;
+  font-weight: map-get($font-weights, bold);
+}
+
+/*--main--*/
+.main-wrapper {
+  @include flexCenter;
+  margin-bottom: 48px;
+}
+
+/*--hero-section--*/
+
+.hero-section {
+  padding: 96px 144px;
+  gap: 104px;
+  background-color: $silver;
+
+  > img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.frame {
+  align-items: map-get($align-items, flex-start);
+}
+
+/*--clients--*/
+.clients {
+  padding: 0px 144px;
+  text-align: center;
+
+  > p {
+    margin-bottom: 16px;
+  }
+}
+
+.clients-logos {
+  @include flexSpaceEvenly;
+  align-items: map-get($align-items, center);
+
+  > img {
+    width: 48px;
+    margin: 16px 0px;
+  }
+}
+
+/*--community--*/
+.community {
+  margin: 40px 0px;
+}
+.community-box {
+  color: $dark-grey;
+  text-align: center;
+}
+
+.frame-4 {
+  @include flexSpaceBetween;
+  align-items: map-get($align-items, center);
+}
+
+.frame-4-group {
+  text-align: center;
+  margin: 24px 32px;
+
+  > p {
+    max-width: 250px;
+    font-size: map-get($font-sizes, regular-body-4);
+    line-height: map-get($line-heights, small);
+  }
+}
+
+/*--unlock-mobile --*/ /*--calender--*/
+
+.frame-img {
+  margin: 52px auto;
+}
+
+.frame-5,
+.frame-7 {
+  max-width: 661px;
+}
+
+/*--achievements--*/
+.achievements {
+  background-color: $silver;
+  justify-content: space-between;
+  padding: 64px 144px;
+}
+.achievements-frame-rights {
+  @include flexCenter;
+  gap: 30px;
+
+  > h3 {
+    font-weight: map-get($font-weights, bold);
+  }
+}
+.row-frame-text {
+  margin: 0px;
+}
+
+.achievements-numbers {
+  @include flexCenter;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+/*--customers--*/
+.customers {
+  background-color: $silver;
+  gap: 78px;
+
+  > img {
+    width: 326px;
+    height: 326px;
+  }
+}
+
+.frame-customers {
+  max-width: 750px;
+  margin: 55px;
+}
+.frame-customers-content {
+  margin-bottom: 16px;
+}
+.special-p {
+  color: $light-grey;
+  margin-bottom: 32px;
+}
+.frame-customers-icons {
+  @include flexCenter;
+  gap: 28px;
+}
+
+/*--community-updates--*/
+.community-updates {
+  text-align: center;
+
+  > p {
+    max-width: 628px;
+    margin: 0px auto 16px auto;
+  }
+}
+
+.frame-community-updates {
+  @include flexSpaceBetween;
+  max-width: 1440px;
+  padding: 0px 144px;
+  align-items: map-get($align-items, center);
+  margin: 0px auto;
+}
+.picture-box {
+  position: map-get($position, relative);
+
+  > img {
+    border-radius: 8px;
+    background: lightgray 50% / cover no-repeat;
+    display: map-get($display, block);
+  }
+}
+
+.picture-box-content {
+  padding: 16px;
+  border-radius: 8px;
+  background: $silver;
+  position: map-get($position, absolute);
+  top: 50%;
+  transform: translate(8%);
+  /* Shadow/8px */
+  box-shadow: 0px 8px 16px 0px rgba(171, 190, 209, 0.4);
+
+  > h4 {
+    max-width: 285px;
+    color: $grey;
+  }
+}
+
+/*--pre-footer--*/
+.pre-footer {
+  margin-top: 95px;
+  padding: 32px 0px;
+  background: $silver;
+}
+
+/*--footer--*/
+footer {
+  @include flexSpaceBetween;
+  padding: 64px 165px;
+  gap: 125px;
+  background: $black;
+
+  // Left div of footer
+  > div:first-child {
+    .footer-logo {
+      img {
+        margin: 0 10px 40px 0;
+      }
+    }
+
+    .copyright {
+      margin-bottom: 40px;
+
+      p {
+        color: $silver;
+        width: 350px;
+        font-family: $font-family;
+        font-size: map-get($font-sizes, regular-body-4);
+        font-style: normal;
+        font-weight: map-get($font-weights, regular);
+        line-height: map-get($line-heights, small);
+        margin: 0;
+      }
+    }
+
+    .icons-footer {
+      @include flexStart;
+      gap: 16px;
+      cursor: pointer;
+
+      img {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  // Right div of footer
+  .footer-right {
+    display: map-get($display, flex);
+    gap: 30px;
+
+    .footer-column {
+      .footer-column-header {
+        color: $white;
+        margin-bottom: 24px;
+      }
+
+      .footer-column-items {
+        list-style: none;
+        color: $silver;
+        font-size: map-get($font-sizes, regular-body-4);
+        line-height: map-get($line-heights, small);
+        margin-right: 60px;
+
+        li {
+          cursor: pointer;
+          margin-bottom: 12px;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .footer-column-with-input {
+      .footer-column-header {
+        color: $white;
+        margin-bottom: 24px;
+      }
+
+      .input-with-icon {
+        position: map-get($position, relative);
+        display: map-get($display, inline-block);
+        width: 255px;
+        border-radius: 8px;
+        opacity: 0.2;
+        background: $white;
+
+        input[type="email"] {
+          width: 100%;
+          padding-left: 10px;
+          box-sizing: border-box;
+          height: 40px;
+          border-radius: 8px;
+
+          &::placeholder {
+            font-family: $font-family;
+            font-size: map-get($font-sizes, regular-body-4);
+            font-style: normal;
+            font-weight: map-get($font-weights, regular);
+            line-height: map-get($line-heights, small);
+            opacity: 1;
+            color: $white;
+          }
+        }
+
+        .input-icon {
+          position: map-get($position, absolute);
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          pointer-events: none;
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+}

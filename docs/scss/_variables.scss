@@ -23,6 +23,11 @@ $warning: #fbc02d;
 $error: #e53835;
 $success: #2e7d31;
 
+/*$shadow variables$*/
+$box-shadows: (
+  "box-shadow": 0px 8px 16px 0px rgba(171, 190, 209, 0.4),
+);
+
 /*$fonts variables$*/
 $font-family: Inter;
 
@@ -46,6 +51,24 @@ $line-heights: (
   "small": 20px,
   "normal": 24px,
   "medium": 28px,
+);
+
+/*$spacing variables$*/
+$margin-bottom: (
+  "tiny": 8px,
+  "small": 12px,
+  "normal": 16px,
+  "normal-medium": 24px,
+  "medium": 32px,
+  "medium-big": 40px,
+  "big": 48px,
+);
+
+$border-radius: (
+  "tiny": 2,
+  78px,
+  "small": 6px,
+  "medium": 8px,
 );
 
 /*$position variables$*/

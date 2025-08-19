@@ -54,19 +54,18 @@ $line-heights: (
 );
 
 /*$spacing variables$*/
-$margin-bottom: (
-  "tiny": 8px,
-  "small": 12px,
-  "normal": 16px,
-  "normal-medium": 24px,
-  "medium": 32px,
-  "medium-big": 40px,
-  "big": 48px,
+$spacing: (
+  "margin-bottom-tiny": 8px,
+  "margin-bottom-small": 12px,
+  "margin-bottom-normal": 16px,
+  "margin-bottom-normal-medium": 24px,
+  "margin-bottom-medium": 32px,
+  "margin-bottom-medium-big": 40px,
+  "margin-bottom-big": 48px,
 );
 
 $border-radius: (
-  "tiny": 2,
-  78px,
+  "tiny": 2px,
   "small": 6px,
   "medium": 8px,
 );
@@ -74,12 +73,10 @@ $border-radius: (
 /*$position variables$*/
 $align-items: (
   "center": center,
-  "flex-start": flex-start,
 );
 
 $position: (
   "sticky": sticky,
-  "absolute": absolute,
   "relative": relative,
 );
 

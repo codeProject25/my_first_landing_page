@@ -28,19 +28,19 @@ button {
 h1 {
   font-size: $regular-headline-2;
   color: $dark-grey;
-  margin-bottom: $normal;
+  margin-bottom: $margin-bottom-normal;
 }
 
 h2 {
   font-size: $regular-headline-3;
   color: $dark-grey;
-  margin-bottom: $tiny;
+  margin-bottom: $margin-bottom-tiny;
 }
 
 h3 {
   font-size: $regular-body-1;
   color: $dark-grey;
-  margin-bottom: $normal;
+  margin-bottom: $margin-bottom-normal;
 }
 
 h4 {
@@ -53,7 +53,7 @@ h4 {
 p {
   font-size: $regular-body-3;
   color: $grey;
-  margin-bottom: $medium;
+  margin-bottom: $margin-bottom-medium;
 }
 button {
   font-family: $font-family;
@@ -120,7 +120,7 @@ header {
 /*--main--*/
 .main-wrapper {
   @include flexCenter;
-  margin-bottom: $big;
+  margin-bottom: $margin-bottom-big;
 }
 
 /*--hero-section--*/
@@ -144,7 +144,7 @@ header {
   text-align: center;
 
   > p {
-    margin-bottom: $normal;
+    margin-bottom: $margin-bottom-normal;
   }
 }
 
@@ -215,7 +215,7 @@ header {
 .achievements-numbers {
   @include flexCenter;
   gap: 16px;
-  margin-bottom: $medium-big;
+  margin-bottom: $margin-bottom-medium-big;
 }
 
 /*--customers--*/
@@ -234,11 +234,11 @@ header {
   margin: 55px;
 }
 .frame-customers-content {
-  margin-bottom: $normal;
+  margin-bottom: $margin-bottom-normal;
 }
 .special-p {
   color: $light-grey;
-  margin-bottom: $medium;
+  margin-bottom: $margin-bottom-medium;
 }
 .frame-customers-icons {
   @include flexCenter;
@@ -310,7 +310,7 @@ footer {
     }
 
     .copyright {
-      margin-bottom: $medium-big;
+      margin-bottom: $margin-bottom-medium-big;
 
       p {
         color: $silver;
@@ -347,7 +347,7 @@ footer {
     .footer-column {
       .footer-column-header {
         color: $white;
-        margin-bottom: $normal-medium;
+        margin-bottom: $margin-bottom-normal-medium;
       }
 
       .footer-column-items {
@@ -359,7 +359,7 @@ footer {
 
         li {
           cursor: pointer;
-          margin-bottom: $small;
+          margin-bottom: $margin-bottom-small;
 
           &:hover {
             text-decoration: underline;
@@ -371,7 +371,7 @@ footer {
     .footer-column-with-input {
       .footer-column-header {
         color: $white;
-        margin-bottom: $normal-medium;
+        margin-bottom: $margin-bottom-normal-medium;
       }
 
       .input-with-icon {

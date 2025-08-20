@@ -1,0 +1,24 @@
+@mixin flexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flexSpaceEvenly {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flexStart {
+  display: flex;
+  align-items: flex-start;
+}
+
+@mixin positionAbsoluteCenter {
+  position: absolute;
+  top: 50%;
+}

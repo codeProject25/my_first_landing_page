@@ -1,0 +1,87 @@
+/*$color variables$*/
+$black: #263238;
+$dark-grey: #4d4d4d;
+$grey: #717171;
+$light-grey: #89939e;
+$grey-blue: #abbed1;
+$silver: #f5f7fa;
+$white: #ffffff;
+$primary: #4caf4f;
+$secondary: #263238;
+$info: #2194f3;
+$shade1: #43a046;
+$shade2: #388e3b;
+$shade3: #237d31;
+$shade4: #1b5e1f;
+$shade5: #103e13;
+$tint1: #66bb69;
+$tint2: #81c784;
+$tint3: #81c784;
+$tint4: #c8e6c9;
+$tint5: #e8f5e9;
+$warning: #fbc02d;
+$error: #e53835;
+$success: #2e7d31;
+
+/*$shadow variables$*/
+$box-shadows: (
+  "box-shadow": 0px 8px 16px 0px rgba(171, 190, 209, 0.4),
+);
+
+/*$fonts variables$*/
+$font-family: Inter;
+
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "semi-bold": 600,
+  "bold": 700,
+);
+
+$font-sizes: (
+  "regular-body-4": 14px,
+  "regular-body-3": 16px,
+  "regular-body-2": 20px,
+  "regular-body-1": 28px,
+  "regular-headline-3": 36px,
+  "regular-headline-2": 64px,
+);
+
+$line-heights: (
+  "small": 20px,
+  "normal": 24px,
+  "medium": 28px,
+);
+
+/*$spacing variables$*/
+$spacing: (
+  "margin-bottom-tiny": 8px,
+  "margin-bottom-small": 12px,
+  "margin-bottom-normal": 16px,
+  "margin-bottom-normal-medium": 24px,
+  "margin-bottom-medium": 32px,
+  "margin-bottom-medium-big": 40px,
+  "margin-bottom-big": 48px,
+);
+
+$border-radius: (
+  "tiny": 2px,
+  "small": 6px,
+  "medium": 8px,
+);
+
+/*$position variables$*/
+$align-items: (
+  "center": center,
+);
+
+$position: (
+  "sticky": sticky,
+  "relative": relative,
+);
+
+$display: (
+  "flex": flex,
+  "block": block,
+  "inline-block": inline-block,
+);

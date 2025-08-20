@@ -1,0 +1,422 @@
+/*$color variables$*/
+/*$fonts variables$*/
+/*$position variables$*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /*This makes all paddings/borders included in the width calculation:*/
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  padding: 0px 144px;
+}
+
+body {
+  font-family: Inter, sans-serif;
+}
+
+button {
+  background-color: #ffffff;
+  /*font-size: 1rem;*/
+  border: none;
+  border-radius: 6px;
+  transition: 150ms ease-in-out;
+  transition-property: background-color, color;
+}
+
+/*fonts*/
+h1 {
+  font-size: 64px;
+  color: #4d4d4d;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 36px;
+  color: #4d4d4d;
+  margin-bottom: 8px;
+}
+
+h3 {
+  font-size: 28px;
+  color: #4d4d4d;
+  margin-bottom: 16px;
+}
+
+h4 {
+  font-size: 20px;
+  color: #4caf4f;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+p {
+  font-size: 16px;
+  color: #717171;
+  margin-bottom: 32px;
+}
+
+button {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+}
+button:hover {
+  text-decoration: underline;
+}
+button.primary-medium {
+  background-color: #4caf4f;
+  color: #ffffff;
+  border: 0;
+  border-radius: 2.78px;
+  padding: 14px 32px;
+  transition: background 0.4s, color 0.2s; /* smooth transition */
+}
+button.primary-medium:hover {
+  background: #388e3b;
+}
+button.button-green-underline:hover {
+  text-decoration: underline;
+  text-decoration-color: #4caf4f;
+}
+
+/*--header--*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  background-color: #ffffff;
+}
+
+.right-menu {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  gap: 51px;
+  color: #4d4d4d;
+}
+
+.highlight {
+  color: #4caf4f;
+  font-weight: 700;
+}
+
+/*--main--*/
+.main-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+/*--hero-section--*/
+.hero-section {
+  padding: 96px 144px;
+  gap: 104px;
+  background-color: #f5f7fa;
+}
+
+.frame {
+  align-items: flex-start;
+}
+
+.hero-section > img {
+  margin: auto 0;
+}
+
+/*--clients--*/
+.clients {
+  padding: 0px 144px;
+  text-align: center;
+}
+
+.clients > p {
+  margin-bottom: 16px;
+}
+
+.clients-logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clients-logos > img {
+  width: 48px;
+  margin: 16px 0px;
+}
+
+/*--community--*/
+.community {
+  margin: 40px 0px;
+}
+
+.community-box {
+  color: #4d4d4d;
+  text-align: center;
+}
+
+.frame-4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.frame-4-group {
+  text-align: center;
+  margin: 24px 32px;
+}
+
+.frame-4-group > p {
+  max-width: 250px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/*--unlock-mobile --*/ /*--calender--*/
+.frame-img {
+  margin: 52px auto;
+}
+
+.frame-5,
+.frame-7 {
+  max-width: 661px;
+}
+
+/*--achievements--*/
+.achievements {
+  background-color: #f5f7fa;
+  justify-content: space-between;
+  padding: 64px 144px;
+}
+
+.achievements-frame-rights {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.row-frame-text {
+  margin: 0px;
+}
+
+.achievements-frame-rights > h3 {
+  font-weight: 700;
+}
+
+.achievements-numbers {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+/*--customers--*/
+.customers {
+  background-color: #f5f7fa;
+  gap: 78px;
+}
+
+.customers > img {
+  width: 326px;
+  height: 326px;
+}
+
+.frame-customers {
+  max-width: 750px;
+  margin: 55px;
+}
+
+.frame-customers-content {
+  margin-bottom: 16px;
+}
+
+.special-p {
+  color: #89939e;
+  margin-bottom: 32px;
+}
+
+.frame-customers-icons {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.button-green-underline {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+  background-color: #f5f7fa;
+  margin: 0px auto;
+}
+
+/*--community-updates--*/
+.community-updates {
+  text-align: center;
+}
+
+.community-updates > p {
+  max-width: 628px;
+  margin: 0px auto 16px auto;
+}
+
+.frame-community-updates {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  padding: 0px 144px;
+  align-items: center;
+  margin: 0px auto;
+}
+
+.picture-box {
+  position: relative;
+}
+
+.picture-box > img {
+  border-radius: 8px;
+  background: lightgray 50% / cover no-repeat;
+  display: block;
+}
+
+.picture-box-content {
+  padding: 16px;
+  border-radius: 8px;
+  background: #f5f7fa;
+  position: absolute;
+  top: 50%;
+  transform: translate(8%);
+  /* Shadow/8px */
+  box-shadow: 0px 8px 16px 0px rgba(171, 190, 209, 0.4);
+}
+
+.picture-box-content > h4 {
+  max-width: 285px;
+  color: #717171;
+}
+
+/*--pre-footer--*/
+.pre-footer {
+  margin-top: 95px;
+  padding: 32px 0px;
+  background: #f5f7fa;
+}
+
+/*--footer--*/
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 64px 165px;
+  gap: 125px;
+  background: #263238;
+}
+
+.footer-logo > img {
+  margin: 0px 10px 40px 0px;
+}
+
+.copyright {
+  margin-bottom: 40px;
+}
+
+li,
+.icons-footer {
+  cursor: pointer;
+}
+
+li:hover {
+  text-decoration: underline;
+}
+
+.copyright > p {
+  color: #f5f7fa;
+  width: 350px;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0px;
+}
+
+.icons-footer {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.footer-right {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-column-items {
+  list-style: none;
+  color: #f5f7fa;
+  font-size: 14px;
+  line-height: 20px;
+  margin-right: 60px;
+}
+
+.footer-column-items > li {
+  margin-bottom: 12px;
+}
+
+.footer-column-header {
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.input-with-icon {
+  position: relative;
+  display: inline-block;
+  width: 255px;
+  border-radius: 8px;
+  opacity: 0.2;
+  background: #ffffff;
+}
+
+.input-with-icon input[type="email"] {
+  width: 100%;
+  padding-left: 10px;
+  box-sizing: border-box;
+  height: 40px;
+  border-radius: 8px;
+}
+
+input::-moz-placeholder {
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  opacity: 1;
+  color: #ffffff;
+}
+
+input::placeholder {
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  opacity: 1;
+  color: #ffffff;
+}
+
+.input-with-icon .input-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* icon does not block input interaction */
+  width: 18px;
+  height: 18px;
+} /*# sourceMappingURL=main.css.map */

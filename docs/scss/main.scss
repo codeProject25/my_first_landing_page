@@ -1,5 +1,6 @@
 @import "./variables";
 @import "./mixins";
+@import "./responsive";
 
 *,
 *::before,
@@ -19,88 +20,84 @@ button {
   background-color: $white;
   /*font-size: 1rem;*/
   border: none;
-  border-radius: $small;
+  border-radius: map-get($border-radius, "small");
   transition: 150ms ease-in-out;
   transition-property: background-color, color;
 }
 
 /*fonts*/
 h1 {
-  font-size: $regular-headline-2;
+  font-size: map-get($font-sizes, "regular-headline-2");
   color: $dark-grey;
-  margin-bottom: $margin-bottom-normal;
+  margin-bottom: map-get($spacing, "margin-bottom-normal");
 }
 
 h2 {
-  font-size: $regular-headline-3;
+  font-size: map-get($font-sizes, "regular-headline-3");
   color: $dark-grey;
-  margin-bottom: $margin-bottom-tiny;
+  margin-bottom: map-get($spacing, "margin-bottom-tiny");
 }
 
 h3 {
-  font-size: $regular-body-1;
+  font-size: map-get($font-sizes, "regular-body-1");
   color: $dark-grey;
-  margin-bottom: $margin-bottom-normal;
+  margin-bottom: map-get($spacing, "margin-bottom-normal");
 }
 
 h4 {
-  font-size: $regular-body-2;
+  font-size: map-get($font-sizes, "regular-body-2");
   color: $primary;
-  font-weight: $semi-bold;
-  line-height: $medium;
+  font-weight: map-get($font-weights, "semi-bold");
+  line-height: map-get($line-heights, "medium");
 }
 
 p {
-  font-size: $regular-body-3;
+  font-size: map-get($font-sizes, "regular-body-3");
   color: $grey;
-  margin-bottom: $margin-bottom-medium;
+  margin-bottom: map-get($spacing, "margin-bottom-medium");
 }
 button {
   font-family: $font-family;
-  font-size: $regular-body-3;
-  font-weight: $medium;
-  line-height: $normal;
+  font-size: map-get($font-sizes, "regular-body-3");
+  font-weight: map-get($font-weights, "medium");
+  line-height: map-get($line-heights, "normal");
   cursor: pointer;
 
   &:hover {
     text-decoration: underline;
   }
+}
+.button.primary-medium {
+  background-color: $primary;
+  color: $white;
+  border: 0;
+  border-radius: map-get($border-radius, "tiny");
+  padding: 14px 32px;
+  transition: background 0.4s, color 0.2s; /* smooth transition */
 
-  .primary-medium {
-    @extend .button;
-    background-color: $primary;
-    color: $white;
-    border: 0;
-    border-radius: $tiny;
-    padding: 14px 32px;
-    transition: background 0.4s, color 0.2s; /* smooth transition */
-
-    & &:hover {
-      background: $shade2;
-    }
+  &:hover {
+    background: $shade2;
   }
-  .button-green-underline {
-    @extend .button;
+}
+.button-green-underline {
+  display: map-get($display, "flex");
+  cursor: pointer;
+  align-items: map-get($align-items, "center");
+  padding: 8px;
+  gap: 8px;
+  background-color: $silver;
+  margin: 0px auto;
 
-    display: $flex;
-    cursor: pointer;
-    align-items: $center;
-    padding: 8px;
-    gap: 8px;
-    background-color: $silver;
-    margin: 0px auto;
-
-    &:hover {
-      text-decoration: underline;
-      text-decoration-color: $primary;
-    }
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: $primary;
   }
 }
 /*--header--*/
 header {
   @include flexSpaceBetween;
-  align-items: $center;
-  position: $sticky;
+  align-items: map-get($align-items, "center");
+  position: map-get($position, "sticky");
   top: 0px;
   background-color: $white;
 }
@@ -114,13 +111,13 @@ header {
 
 .highlight {
   color: $primary;
-  font-weight: $bold;
+  font-weight: map-get($font-weights, "bold");
 }
 
 /*--main--*/
 .main-wrapper {
   @include flexCenter;
-  margin-bottom: $margin-bottom-big;
+  margin-bottom: map-get($spacing, "$margin-bottom-big");
 }
 
 /*--hero-section--*/
@@ -135,7 +132,7 @@ header {
   }
 }
 .frame {
-  align-items: $flex-start;
+  align-items: map-get($align-items, "$flex-start");
 }
 
 /*--clients--*/
@@ -144,13 +141,13 @@ header {
   text-align: center;
 
   > p {
-    margin-bottom: $margin-bottom-normal;
+    margin-bottom: map-get($spacing, "$margin-bottom-normal");
   }
 }
 
 .clients-logos {
   @include flexSpaceEvenly;
-  align-items: $center;
+  align-items: map-get($align-items, "$center");
 
   > img {
     width: 48px;
@@ -169,7 +166,7 @@ header {
 
 .frame-4 {
   @include flexSpaceBetween;
-  align-items: $center;
+  align-items: map-get($align-items, "$center");
 }
 
 .frame-4-group {
@@ -178,8 +175,8 @@ header {
 
   > p {
     max-width: 250px;
-    font-size: $regular-body-4;
-    line-height: $small;
+    font-size: map-get($font-sizes, "regular-body-4");
+    line-height: map-get($line-heights, "small");
   }
 }
 
@@ -205,7 +202,7 @@ header {
   gap: 30px;
 
   > h3 {
-    font-weight: $bold;
+    font-weight: map-get($font-weights, "bold");
   }
 }
 .row-frame-text {
@@ -215,7 +212,7 @@ header {
 .achievements-numbers {
   @include flexCenter;
   gap: 16px;
-  margin-bottom: $margin-bottom-medium-big;
+  margin-bottom: map-get($spacing, "margin-bottom-medium-big");
 }
 
 /*--customers--*/
@@ -234,11 +231,11 @@ header {
   margin: 55px;
 }
 .frame-customers-content {
-  margin-bottom: $margin-bottom-normal;
+  margin-bottom: map-get($spacing, "margin-bottom-normal");
 }
 .special-p {
   color: $light-grey;
-  margin-bottom: $margin-bottom-medium;
+  margin-bottom: map-get($spacing, "margin-bottom-medium");
 }
 .frame-customers-icons {
   @include flexCenter;
@@ -259,16 +256,16 @@ header {
   @include flexSpaceBetween;
   max-width: 1440px;
   padding: 0px 144px;
-  align-items: $center;
+  align-items: map-get($align-items, "$center");
   margin: 0px auto;
 }
 .picture-box {
-  position: $relative;
+  position: map-get($position, "relative");
 
   > img {
-    border-radius: $medium;
+    border-radius: map-get($border-radius, "medium");
     background: lightgray 50% / cover no-repeat;
-    display: $block;
+    display: map-get($display, "block");
   }
 }
 
@@ -276,10 +273,10 @@ header {
   @include positionAbsoluteCenter;
   transform: translate(8%);
   padding: 16px;
-  border-radius: $medium;
+  border-radius: map-get($border-radius, "medium");
   background: $silver;
   /* Shadow/8px */
-  box-shadow: $box-shadow;
+  box-shadow: map-get($box-shadows, "box-shadow");
 
   > h4 {
     max-width: 285px;
@@ -310,16 +307,16 @@ footer {
     }
 
     .copyright {
-      margin-bottom: $margin-bottom-medium-big;
+      margin-bottom: map-get($spacing, "margin-bottom-medium-big");
 
       p {
         color: $silver;
         width: 350px;
         font-family: $font-family;
-        font-size: $regular-body-4;
+        font-size: map-get($font-sizes, "regular-body-4");
         font-style: normal;
-        font-weight: $regular;
-        line-height: $small;
+        font-weight: map-get($font-weights, "regular");
+        line-height: map-get($line-heights, "small");
         margin: 0;
       }
     }
@@ -341,25 +338,25 @@ footer {
 
   // Right div of footer
   .footer-right {
-    display: $flex;
+    display: map-get($display, "flex");
     gap: 30px;
 
     .footer-column {
       .footer-column-header {
         color: $white;
-        margin-bottom: $margin-bottom-normal-medium;
+        margin-bottom: map-get($spacing, "margin-bottom-normal-medium");
       }
 
       .footer-column-items {
         list-style: none;
         color: $silver;
-        font-size: $regular-body-4;
-        line-height: $small;
+        font-size: map-get($font-sizes, "regular-body-4");
+        line-height: map-get($line-heights, "small");
         margin-right: 60px;
 
         li {
           cursor: pointer;
-          margin-bottom: $margin-bottom-small;
+          margin-bottom: map-get($spacing, "margin-bottom-small");
 
           &:hover {
             text-decoration: underline;
@@ -371,14 +368,14 @@ footer {
     .footer-column-with-input {
       .footer-column-header {
         color: $white;
-        margin-bottom: $margin-bottom-normal-medium;
+        margin-bottom: map-get($spacing, "margin-bottom-normal-medium");
       }
 
       .input-with-icon {
-        position: $relative;
-        display: $inline-block;
+        position: map-get($position, "relative");
+        display: map-get($display, "inline-block");
         width: 255px;
-        border-radius: $medium;
+        border-radius: map-get($border-radius, "medium");
         opacity: 0.2;
         background: $white;
 
@@ -387,14 +384,14 @@ footer {
           padding-left: 10px;
           box-sizing: border-box;
           height: 40px;
-          border-radius: $medium;
+          border-radius: map-get($border-radius, "medium");
 
           &::placeholder {
             font-family: $font-family;
-            font-size: $regular-body-4;
+            font-size: map-get($font-sizes, "regular-body-4");
             font-style: normal;
-            font-weight: $regular;
-            line-height: $small;
+            font-weight: map-get($font-weights, "regular");
+            line-height: map-get($line-heights, "small");
             opacity: 1;
             color: $white;
           }

@@ -1,0 +1,14 @@
+@include media-phone {
+  .right-menu {
+    visibility: hidden;
+  }
+}
+
+@include media-tablet {
+  .right-menu {
+    visibility: hidden;
+  }
+}
+
+@include media-laptop {
+}

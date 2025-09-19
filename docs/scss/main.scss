@@ -1,6 +1,10 @@
-@import "./variables";
-@import "./mixins";
-@import "./responsive";
+@import "base/variables";
+@import "utiles/mixins";
+@import "utiles/responsive";
+@import "layout/header";
+@import "layout/wrapper";
+@import "layout/hero";
+@import "layout/clients";
 
 *,
 *::before,
@@ -11,7 +15,15 @@
 }
 .container {
   width: 100%;
-  padding: 0px 144px;
+  padding: 16px; // мобільна версія за замовчуванням
+
+  @include media-tablet {
+    padding: 32px;
+  }
+
+  @include media-laptop {
+    padding: 0px 144px;
+  }
 }
 body {
   font-family: $font-family, sans-serif;
@@ -27,34 +39,74 @@ button {
 
 /*fonts*/
 h1 {
-  font-size: map-get($font-sizes, "regular-headline-2");
+  font-size: map-get($font-sizes, "regular-headline-3");
   color: $dark-grey;
   margin-bottom: map-get($spacing, "margin-bottom-normal");
+
+  @include media-tablet {
+    font-size: map-get($font-sizes, "regular-headline-3");
+  }
+
+  @include media-laptop {
+    font-size: map-get($font-sizes, "regular-headline-2");
+  }
 }
 
 h2 {
-  font-size: map-get($font-sizes, "regular-headline-3");
+  font-size: map-get($font-sizes, "regular-body-1");
   color: $dark-grey;
   margin-bottom: map-get($spacing, "margin-bottom-tiny");
+
+  @include media-tablet {
+    font-size: map-get($font-sizes, "regular-body-1");
+  }
+
+  @include media-laptop {
+    font-size: map-get($font-sizes, "regular-body-1");
+  }
 }
 
 h3 {
-  font-size: map-get($font-sizes, "regular-body-1");
+  font-size: map-get($font-sizes, "regular-body-2");
   color: $dark-grey;
   margin-bottom: map-get($spacing, "margin-bottom-normal");
+
+  @include media-tablet {
+    font-size: map-get($font-sizes, "regular-body-2");
+  }
+
+  @include media-laptop {
+    font-size: map-get($font-sizes, "regular-body-1");
+  }
 }
 
 h4 {
-  font-size: map-get($font-sizes, "regular-body-2");
+  font-size: map-get($font-sizes, "regular-body-3");
   color: $primary;
   font-weight: map-get($font-weights, "semi-bold");
   line-height: map-get($line-heights, "medium");
+
+  @include media-tablet {
+    font-size: map-get($font-sizes, "regular-body-3");
+  }
+
+  @include media-laptop {
+    font-size: map-get($font-sizes, "regular-body-2");
+  }
 }
 
 p {
-  font-size: map-get($font-sizes, "regular-body-3");
+  font-size: map-get($font-sizes, "regular-body-4");
   color: $grey;
   margin-bottom: map-get($spacing, "margin-bottom-medium");
+
+  @include media-tablet {
+    font-size: map-get($font-sizes, "regular-body-3");
+  }
+
+  @include media-laptop {
+    font-size: map-get($font-sizes, "regular-body-3");
+  }
 }
 button {
   font-family: $font-family;
@@ -93,67 +145,220 @@ button {
     text-decoration-color: $primary;
   }
 }
-/*--header--*/
-header {
-  @include flexSpaceBetween;
-  align-items: map-get($align-items, "center");
-  position: map-get($position, "sticky");
-  top: 0px;
-  background-color: $white;
-}
+// /*--header--*/
+// header {
+//   position: map-get($position, "sticky");
+//   top: 0px;
+//   background-color: $white;
+//   padding: 16px 0px;
+//   z-index: 1000;
+// }
 
-.right-menu {
-  @include flexCenter;
-  padding: 16px;
-  gap: 51px;
-  color: $dark-grey;
-}
+// header .container {
+//   @include flexSpaceBetween;
+//   align-items: map-get($align-items, "center");
+// }
 
-.highlight {
-  color: $primary;
-  font-weight: map-get($font-weights, "bold");
-}
+// .right-menu {
+//   display: none;
 
-/*--main--*/
-.main-wrapper {
-  @include flexCenter;
-  margin-bottom: map-get($spacing, "$margin-bottom-big");
-}
+//   @include media-laptop {
+//     @include flexCenter;
+//     gap: 32px;
+//     color: $dark-grey;
+//   }
+// }
 
-/*--hero-section--*/
+// .burger {
+//   display: block;
+//   width: 32px;
+//   height: 24px;
+//   position: relative;
+//   cursor: pointer;
 
-.hero-section {
-  padding: 96px 144px;
-  gap: 104px;
-  background-color: $silver;
+//   span {
+//     display: block;
+//     height: 3px;
+//     width: 100%;
+//     background-color: $dark-grey;
+//     position: absolute;
+//     left: 0;
+//     border-radius: 2px;
 
-  > img {
-    margin: auto 0;
-  }
-}
-.frame {
-  align-items: map-get($align-items, "$flex-start");
-}
+//     &:nth-child(1) {
+//       top: 0;
+//     }
+//     &:nth-child(2) {
+//       top: 50%;
+//       transform: translateY(-50%);
+//     }
+//     &:nth-child(3) {
+//       bottom: 0;
+//     }
+//     @include media-laptop {
+//       display: none;
+//     }
+//   }
+// }
 
-/*--clients--*/
-.clients {
-  padding: 0px 144px;
-  text-align: center;
+// .highlight {
+//   color: $primary;
+//   font-weight: map-get($font-weights, "bold");
+// }
 
-  > p {
-    margin-bottom: map-get($spacing, "$margin-bottom-normal");
-  }
-}
+// /*--main--*/
+// .main-wrapper {
+//   @include flexCenter;
+//   flex-direction: column;
+//   gap: 32px;
+//   margin-bottom: map-get($spacing, "$margin-bottom-big");
 
-.clients-logos {
-  @include flexSpaceEvenly;
-  align-items: map-get($align-items, "$center");
+//   img {
+//     max-width: 100%;
+//     height: auto;
+//   }
 
-  > img {
-    width: 48px;
-    margin: 16px 0px;
-  }
-}
+//   > div {
+//     text-align: center;
+//     max-width: 100%;
+//   }
+
+//   @include media-tablet {
+//     flex-direction: row;
+//     align-items: center;
+//     justify-content: space-between;
+//     gap: 48px;
+
+//     > div {
+//       flex: 1;
+//       text-align: left;
+//     }
+
+//     img {
+//       flex: 1;
+//       max-width: 50%;
+//     }
+//   }
+
+//   @include media-laptop {
+//     gap: 64px;
+//     margin-bottom: map-get($spacing, "margin-bottom-huge");
+
+//     > div {
+//       max-width: 600px;
+//     }
+//   }
+// }
+
+// /*--hero-section--*/
+
+// .hero-section {
+//   @include flexCenter;
+//   flex-direction: column;
+//   gap: 48px;
+//   padding: 48px 16px;
+//   background-color: $silver;
+//   text-align: center;
+
+//   > img {
+//     max-width: 100%;
+//     height: auto;
+//     margin: 0 auto;
+//   }
+
+//   @include media-tablet {
+//     @include flexSpaceBetween;
+//     flex-direction: row;
+//     // justify-content: space-between;
+//     // align-items: center;
+//     gap: 64px;
+//     padding: 64px 32px;
+//     text-align: left;
+
+//     > img {
+//       flex: 1;
+//       max-width: 50%;
+//       margin: auto 0;
+//     }
+//   }
+
+//   @include media-laptop {
+//     gap: 104px;
+//     padding: 96px 144px;
+
+//     > img {
+//       max-width: 45%;
+//     }
+//   }
+// }
+
+// .frame {
+//   @include flexStart;
+//   flex-direction: column;
+//   gap: 24px;
+
+//   h1 {
+//     margin-bottom: 16px;
+//   }
+
+//   p {
+//     margin-bottom: 24px;
+//   }
+
+//   /* mobile */
+//   @media (max-width: 767px) {
+//     align-items: center;
+//     text-align: center;
+//   }
+// }
+
+// /*--clients--*/
+// .clients {
+//   padding: 48px 16px;
+//   text-align: center;
+
+//   > p {
+//     margin-bottom: map-get($spacing, "$margin-bottom-normal");
+//   }
+
+//   @include media-tablet {
+//     padding: 64px 32px;
+//   }
+
+//   @include media-laptop {
+//     padding: 96px 144px;
+//   }
+// }
+
+// .clients-logos {
+//   @include flexCenter;
+//   flex-wrap: wrap;
+//   gap: 24px;
+//   justify-content: center;
+//   margin-top: 32px;
+
+//   > img {
+//     width: 72px;
+//     height: auto;
+//     margin: 16px 0;
+//   }
+
+//   @include media-tablet {
+//     justify-content: space-evenly;
+
+//     > img {
+//       width: 96px;
+//     }
+//   }
+
+//   @include media-laptop {
+//     gap: 48px;
+
+//     > img {
+//       width: 120px;
+//     }
+//   }
+// }
 
 /*--community--*/
 .community {

@@ -5,6 +5,12 @@
 @import "layout/wrapper";
 @import "layout/hero";
 @import "layout/clients";
+@import "layout/community";
+@import "layout/mobile_calender";
+@import "layout/clients";
+@import "layout/achievements";
+@import "layout/customers";
+@import "layout/updates";
 
 *,
 *::before,
@@ -335,7 +341,7 @@ button {
 //   flex-wrap: wrap;
 //   gap: 24px;
 //   justify-content: center;
-//   margin-top: 32px;
+//   margin-top:  map-get($spacing-top, "margin-top-medium");
 
 //   > img {
 //     width: 72px;
@@ -360,208 +366,417 @@ button {
 //   }
 // }
 
-/*--community--*/
-.community {
-  margin: 40px 0px;
-}
-.community-box {
-  color: $dark-grey;
-  text-align: center;
-}
+// /*--community--*/
+// .community {
+//   margin: 40px 0;
+//   padding: 0 16px;
+//   text-align: center;
 
-.frame-4 {
-  @include flexSpaceBetween;
-  align-items: map-get($align-items, "$center");
-}
+//   @include media-tablet {
+//     padding: 0 32px;
+//   }
 
-.frame-4-group {
-  text-align: center;
-  margin: 24px 32px;
+//   @include media-laptop {
+//     padding: 0 144px;
+//   }
+// }
+// .community-box {
+//   color: $dark-grey;
+//   margin-bottom: map-get($spacing, "$margin-bottom-medium");
 
-  > p {
-    max-width: 250px;
-    font-size: map-get($font-sizes, "regular-body-4");
-    line-height: map-get($line-heights, "small");
-  }
-}
+//   h2 {
+//     margin-bottom: map-get($spacing, "$margin-bottom-normal");
+//   }
+// }
 
-/*--unlock-mobile --*/ /*--calender--*/
+// .frame-4 {
+//   display: flex;
+//   flex-direction: column; // mobile: елементи підряд
+//   align-items: map-get($align-items, "$center");
+//   gap: 32px;
 
-.frame-img {
-  margin: 52px auto;
-}
+//   @include media-tablet {
+//     @include flexSpaceBetween;
+//     align-items: map-get($align-items, "$center");
+//     flex-direction: row;
+//     flex-wrap: wrap; // щоб елементи переносилися
+//     gap: 24px;
+//   }
 
-.frame-5,
-.frame-7 {
-  max-width: 661px;
-}
+//   @include media-laptop {
+//     @include flexSpaceEvenly;
+//     gap: 48px;
+//   }
+// }
 
-/*--achievements--*/
-.achievements {
-  @include flexSpaceBetween;
-  background-color: $silver;
-  padding: 64px 144px;
-}
-.achievements-frame-rights {
-  @include flexCenter;
-  gap: 30px;
+// .frame-4-group {
+//   text-align: center;
+//   margin: 24px 32px;
+//   flex: 1 1 200px;
 
-  > h3 {
-    font-weight: map-get($font-weights, "bold");
-  }
-}
-.row-frame-text {
-  margin: 0px;
-}
+//   > p {
+//     max-width: 250px;
+//     margin: 0 auto;
+//     font-size: map-get($font-sizes, "regular-body-4");
+//     line-height: map-get($line-heights, "small");
+//   }
+// }
 
-.achievements-numbers {
-  @include flexCenter;
-  gap: 16px;
-  margin-bottom: map-get($spacing, "margin-bottom-medium-big");
-}
+// /*--unlock-mobile --*/ /*--calender--*/
+
+// .unlock-mobile,
+// .calender {
+//   padding: 48px 16px;
+//   text-align: center;
+
+//   @include media-tablet {
+//     @include flexSpaceBetween;
+//     align-items: map-get($align-items, "$center");
+//     padding: 64px 32px;
+//     text-align: left;
+//     gap: 32px;
+//   }
+
+//   @include media-laptop {
+//     padding: 96px 144px;
+//     gap: 64px;
+//   }
+// }
+
+// .frame-img {
+//   margin: 32px auto;
+//   max-width: 100%;
+//   height: auto;
+
+//   @include media-tablet {
+//     flex: 1;
+//     margin: 0;
+//   }
+// }
+
+// .frame-5,
+// .frame-7 {
+//   max-width: 661px;
+//   margin: 0 auto;
+
+//   @include media-tablet {
+//     flex: 1;
+//     margin: 0;
+//   }
+// }
+
+// /*--achievements--*/
+// .achievements {
+//   background-color: $silver;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: map-get($align-items, "$center");
+//   text-align: center;
+//   padding: 48px 16px;
+//   gap: 40px;
+
+//   @include media-tablet {
+//     @include flexSpaceBetween;
+//     @include flexCenter;
+//     flex-direction: row;
+//     background-color: $silver;
+//     padding: 64px 32px;
+//     gap: 48px;
+//   }
+
+//   @include media-laptop {
+//     padding: 96px 144px;
+//     gap: 64px;
+//   }
+// }
+// .achievements-frame-rights {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 32px;
+
+//   @include media-tablet {
+//     gap: 40px;
+//   }
+
+//   @include media-laptop {
+//     gap: 56px;
+//   }
+
+//   > h3 {
+//     font-weight: map-get($font-weights, "bold");
+//   }
+// }
+
+// .row-frame-text {
+//   margin: 0px;
+// }
+
+// .numbers-row {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 24px;
+
+//   @include media-tablet {
+//     @include flexStart;
+//     flex-direction: row;
+//     gap: 48px;
+//   }
+// }
+
+// .achievements-numbers {
+//   @include flexCenter;
+//   justify-content: flex-start;
+//   gap: 16px;
+//   margin-bottom: map-get($spacing, "margin-bottom-medium-big");
+
+//   img {
+//     width: 40px;
+//     height: 40px;
+
+//     @include media-laptop {
+//       width: 48px;
+//       height: 48px;
+//     }
+//   }
+
+//   h3 {
+//     font-size: map-get($font-sizes, "regular-body-2");
+//     margin: 0;
+//   }
+
+//   p {
+//     margin: 0;
+//     color: $dark-grey;
+//   }
+// }
 
 /*--customers--*/
-.customers {
-  background-color: $silver;
-  gap: 78px;
+// .customers {
+//   background-color: $silver;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: map-get($align-items, "$center");
+//   gap: 32px;
+//   padding: 48px 16px;
+//   text-align: center;
 
-  > img {
-    width: 326px;
-    height: 326px;
-  }
-}
+//   > img {
+//     width: 220px;
+//     height: auto;
+//     margin: 0 auto;
+//   }
 
-.frame-customers {
-  max-width: 750px;
-  margin: 55px;
-}
-.frame-customers-content {
-  margin-bottom: map-get($spacing, "margin-bottom-normal");
-}
-.special-p {
-  color: $light-grey;
-  margin-bottom: map-get($spacing, "margin-bottom-medium");
-}
-.frame-customers-icons {
-  @include flexCenter;
-  gap: 28px;
-}
+//   @include media-tablet {
+//     @include flexCenter;
+//     flex-direction: row;
+//     align-items: map-get($align-items, "$center");
+//     gap: 48px;
+//     padding: 64px 32px;
+//     text-align: left;
 
-/*--community-updates--*/
-.community-updates {
-  text-align: center;
+//     > img {
+//       width: 280px;
+//       height: auto;
+//       flex-shrink: 0;
+//     }
+//   }
 
-  > p {
-    max-width: 628px;
-    margin: 0px auto 16px auto;
-  }
-}
+//   @include media-laptop {
+//     gap: 78px;
+//     padding: 96px 144px;
 
-.frame-community-updates {
-  @include flexSpaceBetween;
-  max-width: 1440px;
-  padding: 0px 144px;
-  align-items: map-get($align-items, "$center");
-  margin: 0px auto;
-}
-.picture-box {
-  position: map-get($position, "relative");
+//     > img {
+//       width: 326px;
+//       height: 326px;
+//     }
+//   }
+// }
 
-  > img {
-    border-radius: map-get($border-radius, "medium");
-    background: lightgray 50% / cover no-repeat;
-    display: map-get($display, "block");
-  }
-}
+// .frame-customers {
+//   max-width: 750px;
+//   margin: 0 auto;
 
-.picture-box-content {
-  @include positionAbsoluteCenter;
-  transform: translate(8%);
-  padding: 16px;
-  border-radius: map-get($border-radius, "medium");
-  background: $silver;
-  /* Shadow/8px */
-  box-shadow: map-get($box-shadows, "box-shadow");
+//   @include media-tablet {
+//     margin: 0;
+//   }
+// }
 
-  > h4 {
-    max-width: 285px;
-    color: $grey;
-  }
-}
+// .frame-customers-content {
+//   margin-bottom: map-get($spacing, "margin-bottom-normal");
+// }
+// .special-p {
+//   color: $light-grey;
+//   margin-bottom: map-get($spacing, "margin-bottom-medium");
+// }
+
+// .frame-customers-icons {
+//   @include flexCenter;
+//   flex-wrap: wrap;
+//   gap: 20px;
+
+//   @include media-tablet {
+//     @include flexStart;
+//     gap: 28px;
+//   }
+// }
+
+// /*--community-updates--*/
+// .community-updates {
+//   text-align: center;
+//   padding: 48px 16px;
+
+//   > p {
+//     max-width: 628px;
+//     margin: 0 auto 16px auto;
+//     font-size: map-get($font-sizes, "regular-body-3");
+//     line-height: map-get($line-heights, "medium");
+//     color: $dark-grey;
+//   }
+
+//   @include media-tablet {
+//     padding: 64px 32px;
+//   }
+
+//   @include media-laptop {
+//     padding: 96px 144px;
+//   }
+// }
+// .frame-community-updates {
+//   display: grid;
+//   grid-template-columns: 1fr; // mobile
+//   gap: 32px;
+//   margin: 0 auto;
+//   max-width: 1440px;
+
+//   @include media-tablet {
+//     grid-template-columns: repeat(2, 1fr);
+//     gap: 40px;
+//   }
+
+//   @include media-laptop {
+//     grid-template-columns: repeat(3, 1fr);
+//     gap: 48px;
+//   }
+// }
+
+// .picture-box {
+//   position: map-get($position, "relative");
+//   margin-bottom: map-get($spacing, "margin-bottom-small");
+
+//   > img {
+//     width: 100%;
+//     border-radius: map-get($border-radius, "medium");
+//     background: lightgray 50% / cover no-repeat;
+//     display: map-get($display, "block");
+//   }
+// }
+
+// .picture-box-content {
+//   @include positionAbsoluteCenter;
+//   // bottom: 16px;
+//   left: 16px;
+//   right: 16px;
+//   // padding: 16px;
+//   border-radius: map-get($border-radius, "medium");
+//   background: $silver;
+//   box-shadow: map-get($box-shadows, "box-shadow");
+//   text-align: center;
+
+//   > h4 {
+//     max-width: 285px;
+//     color: $grey;
+//     font-size: map-get($font-sizes, "regular-body-2");
+//     margin-bottom: 8px;
+//   }
+
+//   button {
+//     margin-top: map-get($spacing-top, "margin-top-tiny");
+//   }
+// }
 
 /*--pre-footer--*/
 .pre-footer {
-  margin-top: 95px;
-  padding: 32px 0px;
+  margin-top: map-get($spacing-top, "margin-top-medium-big");
   background: $silver;
+  text-align: center;
+
+  @include media-tablet {
+    margin-top: map-get($spacing-top, "margin-top-big");
+  }
+
+  @include media-laptop {
+    margin-top: map-get($spacing-top, "margin-top-huge");
+  }
 }
 
 /*--footer--*/
 footer {
-  @include flexSpaceBetween;
-  padding: 64px 165px;
-  gap: 125px;
+  display: flex;
+  flex-direction: column;
+  align-items: map-get($align-items, "$center");
+  text-align: center;
+  padding: 32px 16px;
+  gap: 40px;
   background: $black;
 
-  // Left div of footer
   > div:first-child {
     .footer-logo {
       img {
-        margin: 0 10px 40px 0;
+        margin: 0 8px 24px 0;
+        width: auto;
+        height: 30px;
       }
     }
 
     .copyright {
-      margin-bottom: map-get($spacing, "margin-bottom-medium-big");
+      margin-bottom: map-get($spacing, "margin-bottom-normal-medium");
 
       p {
         color: $silver;
-        width: 350px;
-        font-family: $font-family;
         font-size: map-get($font-sizes, "regular-body-4");
-        font-style: normal;
-        font-weight: map-get($font-weights, "regular");
         line-height: map-get($line-heights, "small");
-        margin: 0;
+        max-width: 90%;
+        margin: 0 auto 8px;
       }
     }
 
     .icons-footer {
-      @include flexStart;
+      @include flexSpaceCenter;
       gap: 16px;
-      cursor: pointer;
 
       img {
         cursor: pointer;
+        transition: opacity 0.2s ease;
 
         &:hover {
-          text-decoration: underline;
+          opacity: 0.7;
         }
       }
     }
   }
 
-  // Right div of footer
   .footer-right {
-    display: map-get($display, "flex");
-    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 
-    .footer-column {
+    .footer-column,
+    .footer-column-with-input {
       .footer-column-header {
         color: $white;
-        margin-bottom: map-get($spacing, "margin-bottom-normal-medium");
+        margin-bottom: map-get($spacing, "margin-bottom-normal-small");
       }
 
       .footer-column-items {
         list-style: none;
-        color: $silver;
-        font-size: map-get($font-sizes, "regular-body-4");
-        line-height: map-get($line-heights, "small");
-        margin-right: 60px;
+        padding: 0;
+        margin: 0;
 
         li {
+          color: $silver;
+          margin-bottom: map-get($spacing, "margin-bottom-tiny");
           cursor: pointer;
-          margin-bottom: map-get($spacing, "margin-bottom-small");
+          font-size: map-get($font-sizes, "regular-body-4");
 
           &:hover {
             text-decoration: underline;
@@ -571,44 +786,62 @@ footer {
     }
 
     .footer-column-with-input {
-      .footer-column-header {
-        color: $white;
-        margin-bottom: map-get($spacing, "margin-bottom-normal-medium");
-      }
-
       .input-with-icon {
-        position: map-get($position, "relative");
-        display: map-get($display, "inline-block");
-        width: 255px;
-        border-radius: map-get($border-radius, "medium");
-        opacity: 0.2;
-        background: $white;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  @include media-tablet {
+    flex-direction: row;
+    align-items: map-get($align-items, "flex-start");
+    text-align: left;
+    padding: 48px 32px;
+
+    > div:first-child {
+      flex: 1;
+    }
+
+    .footer-right {
+      @include flexSpaceBetween;
+      flex: 2;
+      flex-direction: row;
+      align-items: map-get($align-items, "flex-start");
+      gap: 40px;
+    }
+
+    .footer-column-with-input {
+      .input-with-icon {
+        max-width: 340px;
+        margin: 0;
+      }
+    }
+  }
+
+  @include media-laptop {
+    padding: 64px 145px;
+    gap: 125px;
+
+    footer {
+      .footer-column-with-input {
+        .input-with-icon {
+          display: flex;
+          align-items: center;
+          max-width: 400px;
+          width: auto;
+          margin: 0;
+        }
 
         input[type="email"] {
-          width: 100%;
-          padding-left: 10px;
-          box-sizing: border-box;
-          height: 40px;
-          border-radius: map-get($border-radius, "medium");
-
-          &::placeholder {
-            font-family: $font-family;
-            font-size: map-get($font-sizes, "regular-body-4");
-            font-style: normal;
-            font-weight: map-get($font-weights, "regular");
-            line-height: map-get($line-heights, "small");
-            opacity: 1;
-            color: $white;
-          }
+          flex: 1;
         }
 
         .input-icon {
-          @include positionAbsoluteCenter;
-          right: 10px;
-          transform: translateY(-50%);
-          pointer-events: none;
-          width: 18px;
-          height: 18px;
+          position: static;
+          transform: none;
+          margin-left: 8px;
         }
       }
     }

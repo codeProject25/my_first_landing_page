@@ -1,0 +1,40 @@
+.unlock-mobile,
+.calender {
+  padding: 48px 16px;
+  text-align: center;
+
+  @include media-tablet {
+    @include flexSpaceBetween;
+    align-items: map-get($align-items, "$center");
+    padding: 64px 32px;
+    text-align: left;
+    gap: 32px;
+  }
+
+  @include media-laptop {
+    padding: 96px 144px;
+    gap: 64px;
+  }
+}
+
+.frame-img {
+  margin: 32px auto;
+  max-width: 100%;
+  height: auto;
+
+  @include media-tablet {
+    flex: 1;
+    margin: 0;
+  }
+}
+
+.frame-5,
+.frame-7 {
+  max-width: 661px;
+  margin: 0 auto;
+
+  @include media-tablet {
+    flex: 1;
+    margin: 0;
+  }
+}

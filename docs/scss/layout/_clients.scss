@@ -21,7 +21,7 @@
   flex-wrap: wrap;
   gap: 24px;
   justify-content: center;
-  margin-top: 32px;
+  margin-top: map-get($spacing-top, "margin-top-medium");
 
   > img {
     width: 72px;

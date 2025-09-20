@@ -1,0 +1,73 @@
+/*--community-updates--*/
+.community-updates {
+  text-align: center;
+  padding: 48px 16px;
+
+  > p {
+    max-width: 628px;
+    margin: 0 auto 16px auto;
+    font-size: map-get($font-sizes, "regular-body-3");
+    line-height: map-get($line-heights, "medium");
+    color: $dark-grey;
+  }
+
+  @include media-tablet {
+    padding: 64px 32px;
+  }
+
+  @include media-laptop {
+    padding: 96px 144px;
+  }
+}
+.frame-community-updates {
+  display: grid;
+  grid-template-columns: 1fr; // mobile
+  gap: 32px;
+  margin: 0 auto;
+  max-width: 1440px;
+
+  @include media-tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  @include media-laptop {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+}
+
+.picture-box {
+  position: map-get($position, "relative");
+  margin-bottom: map-get($spacing, "margin-bottom-small");
+
+  > img {
+    width: 100%;
+    border-radius: map-get($border-radius, "medium");
+    background: lightgray 50% / cover no-repeat;
+    display: map-get($display, "block");
+  }
+}
+
+.picture-box-content {
+  @include positionAbsoluteCenter;
+  // bottom: 16px;
+  left: 16px;
+  right: 16px;
+  // padding: 16px;
+  border-radius: map-get($border-radius, "medium");
+  background: $silver;
+  box-shadow: map-get($box-shadows, "box-shadow");
+  text-align: center;
+
+  > h4 {
+    max-width: 285px;
+    color: $grey;
+    font-size: map-get($font-sizes, "regular-body-2");
+    margin-bottom: map-get($spacing, "margin-bottom-tiny");
+  }
+
+  button {
+    margin-top: map-get($spacing-top, "margin-top-tiny");
+  }
+}

@@ -15,7 +15,6 @@
 
   @include media-tablet {
     @include flexCenter;
-    flex-direction: row;
     align-items: map-get($align-items, "$center");
     gap: 48px;
     padding: 64px 32px;
@@ -29,12 +28,12 @@
   }
 
   @include media-laptop {
+    flex-direction: row;
     gap: 78px;
     padding: 96px 144px;
 
     > img {
       width: 326px;
-      height: 326px;
     }
   }
 }
@@ -50,19 +49,29 @@
 
 .frame-customers-content {
   margin-bottom: map-get($spacing, "margin-bottom-normal");
+
+  > p {
+    text-align: justify;
+  }
 }
+
 .special-p {
   color: $light-grey;
   margin-bottom: map-get($spacing, "margin-bottom-medium");
 }
 
 .frame-customers-icons {
-  @include flexCenter;
+  @include flexSpaceCenter;
   flex-wrap: wrap;
   gap: 20px;
 
   @include media-tablet {
-    @include flexStart;
     gap: 28px;
+  }
+
+  @include media-laptop {
+    @include flexSpaceCenter;
+    flex-wrap: wrap;
+    gap: 20px;
   }
 }

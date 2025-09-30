@@ -16,58 +16,76 @@
   }
 
   @include media-laptop {
-    padding: 96px 144px;
+    text-align: center;
+
+    > p {
+      max-width: 628px;
+      margin: 0px auto 16px auto;
+    }
   }
 }
+
 .frame-community-updates {
-  display: grid;
-  grid-template-columns: 1fr; // mobile
+  @include flexCenter;
+  flex-wrap: wrap;
+  align-items: map-get($align-items, "stretch");
   gap: 32px;
-  margin: 0 auto;
-  max-width: 1440px;
 
   @include media-tablet {
-    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
+    justify-content: center;
   }
 
   @include media-laptop {
-    grid-template-columns: repeat(3, 1fr);
     gap: 48px;
   }
 }
 
 .picture-box {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: map-get($align-items, "center");
   position: map-get($position, "relative");
-  margin-bottom: map-get($spacing, "margin-bottom-small");
+  margin-bottom: map-get($spacing, "margin-bottom-medium");
 
   > img {
     width: 100%;
     border-radius: map-get($border-radius, "medium");
-    background: lightgray 50% / cover no-repeat;
     display: map-get($display, "block");
   }
 }
 
 .picture-box-content {
   @include positionAbsoluteCenter;
-  // bottom: 16px;
-  left: 16px;
-  right: 16px;
-  // padding: 16px;
+  @include flexCenter;
+  margin-top: 8px;
+  flex: 1;
+  flex-direction: column;
+  align-items: map-get($align-items, "center");
   border-radius: map-get($border-radius, "medium");
   background: $silver;
   box-shadow: map-get($box-shadows, "box-shadow");
   text-align: center;
 
   > h4 {
-    max-width: 285px;
+    width: 100%;
     color: $grey;
     font-size: map-get($font-sizes, "regular-body-2");
-    margin-bottom: map-get($spacing, "margin-bottom-tiny");
+    margin: 8px;
+    word-break: break-word;
   }
 
   button {
     margin-top: map-get($spacing-top, "margin-top-tiny");
+  }
+
+  @include media-tablet {
+    max-width: 300px;
+  }
+
+  @include media-laptop {
+    width: 100%;
   }
 }

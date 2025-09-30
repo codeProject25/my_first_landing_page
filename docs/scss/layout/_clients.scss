@@ -30,6 +30,7 @@
   }
 
   @include media-tablet {
+    flex-wrap: nowrap;
     justify-content: space-evenly;
 
     > img {
@@ -38,6 +39,8 @@
   }
 
   @include media-laptop {
+    @include flexCenter;
+    flex-wrap: wrap;
     gap: 48px;
 
     > img {

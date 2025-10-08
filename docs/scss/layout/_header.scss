@@ -1,15 +1,31 @@
 /*--header--*/
 header {
+  @include flexSpaceBetween;
   position: map-get($position, "sticky");
   top: 0px;
   background-color: $white;
-  padding: 16px 0px;
+  padding: 32px 16px;
   z-index: 1000;
-}
+  @include media-tablet {
+    @include flexSpaceBetween;
+    padding: 32px;
+  }
+  @include media-laptop {
+    @include flexSpaceBetween;
+    padding: 16px 144px;
+    & .logo {
+      padding: 32px 16px;
+    }
+  }
 
-header .container {
-  @include flexSpaceBetween;
-  align-items: map-get($align-items, "center");
+  & .container {
+    @include flexSpaceBetween;
+    align-items: map-get($align-items, "center");
+
+    @include media-laptop {
+      gap: 62px;
+    }
+  }
 }
 
 .right-menu {

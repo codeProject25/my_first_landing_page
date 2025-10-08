@@ -5,17 +5,40 @@
 /*$position variables$*/
 /*--header--*/
 header {
+  display: flex;
+  justify-content: space-between;
   position: sticky;
   top: 0px;
   background-color: #ffffff;
-  padding: 16px 0px;
+  padding: 32px 16px;
   z-index: 1000;
 }
-
+@media (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px;
+  }
+}
+@media (min-width: 1024px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 144px;
+  }
+  header .logo {
+    padding: 32px 16px;
+  }
+}
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (min-width: 1024px) {
+  header .container {
+    gap: 62px;
+  }
 }
 
 .right-menu {
@@ -113,7 +136,7 @@ header .container {
 .hero-section {
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 48px;
   padding: 48px 16px;
   background-color: #f5f7fa;
@@ -263,7 +286,6 @@ header .container {
 
 .frame-4-group {
   text-align: center;
-  margin: 24px 32px;
   flex: 1 1 200px;
 }
 .frame-4-group > p {
@@ -498,7 +520,6 @@ header .container {
 }
 @media (min-width: 1024px) {
   .customers {
-    flex-direction: row;
     gap: 78px;
     padding: 96px 144px;
   }
@@ -523,10 +544,15 @@ header .container {
 .frame-customers-content > p {
   text-align: justify;
 }
-
-.special-p {
+.frame-customers-content > .special-p {
   color: #89939e;
+  text-align: center;
   margin-bottom: 32px;
+}
+@media (min-width: 768px) {
+  .frame-customers-content > .special-p {
+    text-align: start;
+  }
 }
 
 .frame-customers-icons {
@@ -544,6 +570,7 @@ header .container {
   .frame-customers-icons {
     display: flex;
     justify-content: center;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
   }
@@ -580,6 +607,7 @@ header .container {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: stretch;
   gap: 32px;
 }
@@ -618,30 +646,44 @@ header .container {
   margin-top: 8px;
   flex: 1;
   flex-direction: column;
-  align-items: center;
   border-radius: 8px;
   background: #f5f7fa;
   box-shadow: 0px 8px 16px 0px rgba(171, 190, 209, 0.4);
   text-align: center;
+  height: 155px;
 }
 .picture-box-content > h4 {
   width: 100%;
   color: #717171;
   font-size: 20px;
-  margin: 8px;
+  margin: 4px 0px;
   word-break: break-word;
 }
 .picture-box-content button {
   margin-top: 8px;
 }
+.picture-box-content.small > h4 {
+  margin: 8px 16px;
+}
+@media (min-width: 768px) {
+  .picture-box-content.small > h4 {
+    margin: 12px 8px 8px 8px;
+  }
+}
+@media (min-width: 1024px) {
+  .picture-box-content.small > h4 {
+    margin: 16px 16px;
+  }
+}
 @media (min-width: 768px) {
   .picture-box-content {
-    max-width: 300px;
+    max-width: 350px;
   }
 }
 @media (min-width: 1024px) {
   .picture-box-content {
     width: 100%;
+    height: 185px;
   }
 }
 
@@ -893,7 +935,7 @@ h4 {
 }
 @media (min-width: 768px) {
   h4 {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 @media (min-width: 1024px) {
@@ -954,8 +996,5 @@ button:hover {
   text-decoration: underline;
   text-decoration-color: #4caf4f;
 }
-
-/*--customers--*/
-/*--pre-footer--*/
 
 /*# sourceMappingURL=main.css.map */

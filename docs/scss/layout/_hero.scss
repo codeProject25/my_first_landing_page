@@ -2,7 +2,7 @@
 
 .hero-section {
   @include flexCenter;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 48px;
   padding: 48px 16px;
   background-color: $silver;

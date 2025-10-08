@@ -800,6 +800,9 @@ footer .footer-right .footer-column-with-input .input-with-icon input[type=email
   font-size: 14px;
   outline: none;
 }
+footer .footer-right .footer-column-with-input .input-with-icon input[type=email]::-moz-placeholder {
+  color: #f5f7fa;
+}
 footer .footer-right .footer-column-with-input .input-with-icon input[type=email]::placeholder {
   color: #f5f7fa;
 }
@@ -995,6 +998,4 @@ button:hover {
 .button-green-underline:hover {
   text-decoration: underline;
   text-decoration-color: #4caf4f;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

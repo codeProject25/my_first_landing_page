@@ -1,0 +1,175 @@
+/*--pre-footer--*/
+.pre-footer {
+  width: 100%;
+  margin-top: map-get($spacing-top, "margin-top-medium");
+  background-color: $silver;
+  text-align: center;
+  padding: 48px 16px;
+
+  @include media-tablet {
+    display: map-get($display, "flex");
+    flex-direction: column;
+  }
+
+  @include media-laptop {
+    display: map-get($display, "flex");
+    flex-direction: column;
+  }
+}
+
+/* footer */
+footer {
+  background: $black;
+  color: $silver;
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
+
+  /* --- left part --- */
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      img {
+        height: 30px;
+        width: auto;
+      }
+    }
+
+    .copyright {
+      p {
+        font-size: map-get($font-sizes, "regular-body-4");
+        line-height: map-get($line-heights, "small");
+      }
+    }
+
+    .icons-footer {
+      display: flex;
+      gap: 16px;
+
+      img {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  /* --- right part --- */
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    .footer-column,
+    .footer-column-with-input {
+      h4 {
+        margin-bottom: map-get($spacing, "margin-bottom-small");
+      }
+
+      .footer-column-header {
+        color: $white;
+        margin-bottom: map-get($spacing, "margin-bottom-normal-small");
+        font-weight: map-get($font-weights, "semi-bold");
+      }
+
+      .footer-column-items {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          color: $silver;
+          font-size: map-get($font-sizes, "regular-body-4");
+          margin-bottom: map-get($spacing, "margin-bottom-tiny");
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .footer-column-with-input {
+      .input-with-icon {
+        display: flex;
+        align-items: center;
+        background: #717171;
+        border-radius: map-get($border-radius, "tiny");
+        padding: 6px 8px;
+        max-width: 280px;
+        margin: 0px auto;
+
+        input[type="email"] {
+          flex: 1;
+          border: none;
+          background: transparent;
+          color: $white;
+          font-size: map-get($font-sizes, "regular-body-4");
+          outline: none;
+
+          &::placeholder {
+            color: $silver;
+          }
+        }
+
+        .input-icon {
+          margin-left: 8px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  @include media-tablet {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+    padding: 48px 32px;
+
+    .footer-left {
+      flex: 1;
+      align-items: flex-start;
+    }
+
+    .footer-right {
+      flex: 2;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+
+      .footer-column-with-input .input-with-icon {
+        max-width: 340px;
+        margin: 0;
+      }
+    }
+  }
+
+  @include media-laptop {
+    padding: 64px 144px;
+
+    .footer-right {
+      gap: 64px;
+
+      .footer-column-with-input .input-with-icon {
+        max-width: 400px;
+      }
+    }
+  }
+}

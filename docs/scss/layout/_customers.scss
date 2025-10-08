@@ -1,0 +1,82 @@
+.customers {
+  background-color: $silver;
+  display: flex;
+  flex-direction: column;
+  align-items: map-get($align-items, "$center");
+  gap: 32px;
+  padding: 48px 16px;
+  text-align: center;
+
+  > img {
+    width: 220px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  @include media-tablet {
+    @include flexCenter;
+    align-items: map-get($align-items, "$center");
+    gap: 48px;
+    padding: 64px 32px;
+    text-align: left;
+
+    > img {
+      width: 280px;
+      height: auto;
+      flex-shrink: 0;
+    }
+  }
+
+  @include media-laptop {
+    gap: 78px;
+    padding: 96px 144px;
+
+    > img {
+      width: 326px;
+    }
+  }
+}
+
+.frame-customers {
+  max-width: 750px;
+  margin: 0 auto;
+
+  @include media-tablet {
+    margin: 0;
+  }
+}
+
+.frame-customers-content {
+  margin-bottom: map-get($spacing, "margin-bottom-normal");
+
+  > p {
+    text-align: justify;
+  }
+
+  > .special-p {
+    color: $light-grey;
+    text-align: center;
+    margin-bottom: map-get($spacing, "margin-bottom-medium");
+
+    @include media-tablet {
+      text-align: start;
+    }
+  }
+}
+
+.frame-customers-icons {
+  @include flexSpaceCenter;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  @include media-tablet {
+    gap: 28px;
+  }
+
+  @include media-laptop {
+    @include flexSpaceCenter;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}

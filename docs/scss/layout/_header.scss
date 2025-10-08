@@ -1,0 +1,76 @@
+/*--header--*/
+header {
+  @include flexSpaceBetween;
+  position: map-get($position, "sticky");
+  top: 0px;
+  background-color: $white;
+  padding: 32px 16px;
+  z-index: 1000;
+  @include media-tablet {
+    @include flexSpaceBetween;
+    padding: 32px;
+  }
+  @include media-laptop {
+    @include flexSpaceBetween;
+    padding: 16px 144px;
+    & .logo {
+      padding: 32px 16px;
+    }
+  }
+
+  & .container {
+    @include flexSpaceBetween;
+    align-items: map-get($align-items, "center");
+
+    @include media-laptop {
+      gap: 62px;
+    }
+  }
+}
+
+.right-menu {
+  display: none;
+
+  @include media-laptop {
+    @include flexCenter;
+    gap: 32px;
+    color: $dark-grey;
+  }
+}
+
+.burger {
+  display: block;
+  width: 32px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+
+  span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: $dark-grey;
+    position: absolute;
+    left: 0;
+    border-radius: 2px;
+
+    &:nth-child(1) {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:nth-child(3) {
+      bottom: 0;
+    }
+    @include media-laptop {
+      display: none;
+    }
+  }
+}
+
+.highlight {
+  color: $primary;
+  font-weight: map-get($font-weights, "bold");
+}

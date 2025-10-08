@@ -1,0 +1,50 @@
+/*--clients--*/
+.clients {
+  padding: 48px 16px;
+  text-align: center;
+
+  > p {
+    margin-bottom: map-get($spacing, "$margin-bottom-normal");
+  }
+
+  @include media-tablet {
+    padding: 64px 32px;
+  }
+
+  @include media-laptop {
+    padding: 96px 144px;
+  }
+}
+
+.clients-logos {
+  @include flexCenter;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-top: map-get($spacing-top, "margin-top-medium");
+
+  > img {
+    width: 72px;
+    height: auto;
+    margin: 16px 0;
+  }
+
+  @include media-tablet {
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+
+    > img {
+      width: 96px;
+    }
+  }
+
+  @include media-laptop {
+    @include flexCenter;
+    flex-wrap: wrap;
+    gap: 48px;
+
+    > img {
+      width: 120px;
+    }
+  }
+}

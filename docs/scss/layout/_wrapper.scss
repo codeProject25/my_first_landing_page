@@ -1,0 +1,46 @@
+/*--main--*/
+.main-wrapper {
+  @include flexCenter;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: map-get($spacing, "$margin-bottom-big");
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  > div {
+    max-width: 100%;
+  }
+
+  @include media-tablet {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+
+    > div {
+      flex: 1;
+    }
+
+    > h3 {
+      text-align: center;
+    }
+
+    img {
+      flex: 1;
+      max-width: 50%;
+    }
+  }
+
+  @include media-laptop {
+    flex-direction: row;
+    gap: 64px;
+    margin-bottom: map-get($spacing, "margin-bottom-huge");
+
+    > div {
+      max-width: 600px;
+    }
+  }
+}
